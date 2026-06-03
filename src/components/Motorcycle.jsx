@@ -11,8 +11,15 @@ export default function Motorcycle() {
   useScrollAnimation(groupRef, camera);
 
   return (
+    /*
+     * groupRef recibe TODOS los tweens de scroll (position, rotation, scale).
+     * El group interior solo centra el modelo visualmente (offset fijo).
+     * Esto evita que el pivot incorrecto distorsione las rotaciones.
+     */
     <group ref={groupRef}>
-      <primitive object={scene} position={[0, -1.3, 0]} scale={1.4} />
+      <group position={[0, -1.3, 0]} scale={1.4}>
+        <primitive object={scene} />
+      </group>
     </group>
   );
 }
