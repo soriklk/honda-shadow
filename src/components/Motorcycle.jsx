@@ -5,9 +5,7 @@ import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 export default function Motorcycle() {
   const groupRef = useRef();
-
   const { scene } = useGLTF("/models/honda-shadow.glb");
-
   const camera = useThree((state) => state.camera);
 
   useScrollAnimation(groupRef, camera);
