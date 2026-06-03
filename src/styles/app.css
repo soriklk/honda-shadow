@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #050505;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Canvas fijo */
+.canvas-container {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Secciones estilo premium */
+.panel {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+/* Texto principal */
+.panel h1,
+.panel h2 {
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  font-weight: 700;
+  letter-spacing: -2px;
+  background: linear-gradient(90deg, #ffffff, #888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* efecto de separación entre secciones */
+.panel::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 60%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* glow suave de fondo */
+body::before {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.08),
+    transparent 60%
+  );
+  top: 20%;
+  left: 30%;
+  filter: blur(80px);
+  z-index: 0;
+}
